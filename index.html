@@ -1,0 +1,288 @@
+<!DOCTYPE html> <!-- Define o documento como HTML5 -->
+<html lang="pt-br"> <!-- Tag raiz, lang define idioma para SEO -->
+<head> <!-- Cabeça do documento, metadados -->
+  <meta charset="UTF-8"> <!-- Codificação UTF-8 para acentos -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Deixa responsivo no celular -->
+  <title>BLUM✨</title> <!-- Título da aba -->
+  <meta name="description" content="Criamos landing pages rápidas, bonitas e que convertem. Com a magia da Blum."> <!-- Descrição pro Google -->
+  <link rel="icon" type="image/png" href="favicon_Blum.png"> <!-- Ícone da aba -->
+
+  <style> /* Começo do CSS */
+    * { /* Seletor universal, pega tudo */
+      margin: 0; /* Tira margem externa */
+      padding: 0; /* Tira margem interna */
+      box-sizing: border-box; /* Padding não aumenta a largura */
+    }
+
+    body { /* Corpo da página */
+      background: #060007f1; /* Fundo roxo quase preto com transparência */
+      font-family: sans-serif; /* Fonte sem serifa */
+    }
+
+    .hero { /* Seção principal */
+      display: flex; /* Liga flexbox */
+      align-items: center; /* Alinha vertical no centro */
+      justify-content: space-between; /* Espaça os 3 blocos */
+      gap: 40px; /* Espaço entre os blocos */
+      padding: 90px; /* Espaço interno */
+      background-image: url('dark_mode.jpg'); /* Imagem de fundo */
+      background-size: cover; /* Cobre tudo sem distorcer */
+      background-position: center; /* Centraliza fundo */
+      min-height: 100vh; /* Altura mínima 100% da tela */
+    }
+
+    .texto { /* Bloco de texto e botão */
+      width: 50%; /* 50% da largura */
+    }
+
+    h1 { /* Título principal */
+      font-size: 49px; /* Tamanho da letra */
+      line-height: 48px; /* Altura entre linhas */
+      color: #ffffff; /* Cor branca */
+      margin-bottom: 16px; /* Espaço embaixo */
+    }
+
+    .texto p { /* Parágrafo dentro de texto */
+      font-size: 29px; /* Tamanho da letra */
+      color: #e5e5e5; /* Cinza claro */
+      margin-bottom: 24px; /* Espaço embaixo */
+    }
+
+    button { /* Botão principal */
+      background: #5f1c5a; /* Fundo roxo */
+      color: #fff; /* Texto branco */
+      border-radius: 999px; /* Deixa redondo tipo pílula */
+      cursor: pointer; /* Mãozinha no mouse */
+      border: none; /* Tira borda padrão */
+      padding: 14px 28px; /* Espaço dentro: vertical horizontal */
+      font-size: 32px; /* Tamanho da fonte */
+      font-weight: 600; /* Negrito médio */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave */
+      display: inline-block; /* Permite largura e fica na linha */
+    }
+
+    button:hover { /* Quando passa o mouse no botão */
+      transform: translateY(-2px) scale(1.02); /* Sobe 2px e cresce 2% */
+      box-shadow: 0 10px 20px rgba(167, 139, 250, 0.3); /* Sombra roxa */
+    }
+
+    .galeria-vertical { /* Bloco da mascote Blum */
+      width: 50%; /* 50% largura */
+      display: flex; /* Flexbox */
+      flex-direction: column; /* Um embaixo do outro */
+      align-items: center; /* Centro horizontal */
+      gap: 20px; /* Espaço entre itens */
+    }
+
+    .blum-mascote { /* Imagem da Blum */
+      width: 380px; /* Largura fixa */
+      max-width: 100%; /* Não passa do pai */
+      height: auto; /* Altura proporcional */
+      object-fit: contain; /* Não corta a imagem */
+      filter: drop-shadow(0 20px 30px rgba(167, 139, 250, 0.25)); /* Sombra no contorno */
+      animation: flutuar 3s ease-in-out infinite; /* Animação flutuar infinita */
+    }
+
+    @keyframes flutuar { /* Cria animação chamada flutuar */
+      0%, 100% { transform: translateY(0); } /* Começo e fim no lugar */
+      50% { transform: translateY(-10px); } /* Meio sobe 10px */
+    }
+
+    .Pages-Flutuantes { /* Container das 3 caixinhas */
+      display: flex; /* Flexbox */
+      flex-direction: column; /* Coluna */
+      align-items: center; /* Centro horizontal */
+      gap: 25px; /* Espaço entre caixinhas */
+      justify-content: center; /* Centro vertical */
+      perspective: 1000px; /* Ativa efeito 3D pro rotateX/Y */
+    }
+
+    .Pages-Flutuantes img { /* Imagens dentro das caixinhas */
+      width: 100%; /* 100% do pai */
+      height: 100%; /* 100% do pai */
+      object-fit: cover; /* Preenche cortando excesso */
+      display: block; /* Tira espaço fantasma de imagem */
+    }
+
+    .page1 { /* Primeira caixinha - confeitos */
+      width: 200px; /* Largura */
+      height: 200px; /* Altura */
+      overflow: hidden; /* Esconde o que passa pra fora */
+      border-radius: 30px; /* Borda arredondada */
+      border: 3px solid rgba(168, 85, 247, 0.3); /* Borda roxa transparente */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(168, 85, 247, 0.3); /* Sombra preta + brilho roxo */
+      transform: translateY(0px) rotateX(5deg) rotateY(-5deg) scale(1.1); /* Inclina 3D e aumenta 10% */
+      opacity: 0.9; /* 90% opaca */
+      transition: all 0.4s ease; /* Transição suave em tudo */
+    }
+
+    .page2 { /* Segunda caixinha - cabelos */
+      width: 200px; /* Largura */
+      height: 200px; /* Altura */
+      overflow: hidden; /* Esconde excesso */
+      border-radius: 30px; /* Borda arredondada */
+      border: 3px solid rgba(168, 85, 247, 0.3); /* Borda roxa transparente */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(168, 85, 247, 0.3); /* Sombra + brilho */
+      transform: translateY(0px) rotateX(5deg) rotateY(-5deg) scale(1.15); /* 3D e 15% maior - destaque */
+      opacity: 0.9; /* 90% opaca */
+      transition: all 0.4s ease; /* Transição suave */
+    }
+
+    .page3 { /* Terceira caixinha - médica */
+      width: 200px; /* Largura */
+      height: 200px; /* Altura */
+      overflow: hidden; /* Esconde excesso */
+      border-radius: 30px; /* Borda arredondada */
+      border: 3px solid rgba(168, 85, 247, 0.3); /* Borda roxa */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(168, 85, 247, 0.3); /* Sombra + brilho */
+      transform: translateY(0px) rotateX(5deg) rotateY(-5deg) scale(1.05); /* 3D e 5% maior */
+      opacity: 0.9; /* 90% opaca */
+      transition: all 0.4s ease; /* Transição suave */
+    }
+
+    .page1:hover, .page2:hover, .page3:hover { /* Hover nas 3 caixinhas */
+      transform: translateY(-30px) rotateX(5deg) rotateY(-5deg) scale(1.30); /* Sobe 30px e cresce 30% */
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(168, 85, 247, 0.7); /* Sombra mais forte */
+      z-index: 20; /* Traz pra frente de tudo */
+      cursor: pointer; /* Mãozinha */
+    }
+
+    @media (max-width: 768px) { /* Regra para celular até 768px */
+      .hero {
+        flex-direction: column; /* Vira coluna no celular */
+        padding: 40px 20px; /* Diminui padding */
+        text-align: center; /* Centraliza texto */
+      }
+      .texto, .galeria-vertical { /* Texto e mascote */
+        width: 100%; /* Largura total no celular */
+      }
+      .blum-mascote {
+        width: 260px; /* Mascote menor no celular */
+        margin-top: 20px; /* Espaço em cima */
+      }
+      .Pages-Flutuantes {
+        flex-direction: row; /* Horizontal embaixo */
+        flex-wrap: wrap; /* Se não couber, quebra linha - evita scroll lateral */
+        justify-content: center; /* Centraliza as caixinhas */
+        gap: 15px; /* Espaço menor no mobile */
+        width: 100%; /* Ocupa largura toda */
+        margin-top: 30px; /* Espaço da Blum */
+      }
+      .page1, .page2, .page3 {
+        width: 100px; /* Metade no celular */
+        height: 100px; /* Metade no celular */
+      }
+    }
+    .github-float { /* Botão GitHub canto esquerdo */
+      position: fixed; /* Fixo na tela, não rola */
+      bottom: 25px; /* 25px do fundo */
+      left: 25px; /* 25px da esquerda */
+      width: 55px; /* Largura do círculo */
+      height: 55px; /* Altura do círculo */
+      background:rgba(0, 0, 0, 0.6); /* Fundo preto 60% transparente */
+      backdrop-filter: blur(10px); /* Desfoque de vidro */
+      border: 1px solid rgba(255, 255, 255, 0.15); /* Borda branca sutil */
+      border-radius: 50%; /* 50% vira círculo */
+      display: flex; /* Flexbox pra centralizar ícone */
+      align-items: center; /* Centro vertical */
+      justify-content: center; /* Centro horizontal */
+      color: white; /* Cor do ícone */
+      z-index: 100; /* Fica por cima de tudo */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra */
+      animation: flutuar-vertical 6s ease-in-out infinite; /* Animação sobe e desce */
+    }
+
+    @keyframes flutuar-vertical { /* Animação vertical dos ícones sociais */
+      0%, 100% {transform: translateY(0);} /* Começo e fim no lugar */
+      50% {transform: translateY(-30px);} /* Meio sobe 30px */
+    }
+
+    .github-float:hover { /* Hover GitHub */
+      background: white; /* Fundo branco */
+      color: black; /* Ícone preto */
+      transform: scale(1.4); /* Cresce 40% */
+      animation-play-state: paused; /* Pausa flutuação */
+    }
+
+    .github-float svg { /* SVG dentro do GitHub */
+      width: 28px; /* Largura ícone */
+      height: 28px; /* Altura ícone */
+      fill: currentColor; /* Pega a cor do pai */
+    }
+
+    .instagram-float { /* Botão Instagram canto direito */
+      position: fixed; /* Fixo na tela */
+      bottom: 25px; /* 25px do fundo */
+      right: 25px; /* 25px da direita */
+      width: 55px; /* Largura círculo */
+      height: 55px; /* Altura círculo */
+      background:rgba(0, 0, 0, 0.6); /* Fundo preto transparente */
+      backdrop-filter: blur(10px); /* Efeito vidro */
+      border: 1px solid rgba(255, 255, 255, 0.15); /* Borda sutil */
+      border-radius: 50%; /* Círculo */
+      display: flex; /* Flexbox */
+      align-items: center; /* Centro vertical */
+      justify-content: center; /* Centro horizontal */
+      color: white; /* Cor ícone */
+      z-index: 100; /* Por cima */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra */
+      animation: flutuar-vertical 6s ease-in-out infinite; /* Mesma animação do GitHub */
+      animation-delay: 0.8s; /* Atrasa 0.8s pra não flutuarem juntos */
+    }
+
+    .instagram-float:hover { /* Hover Instagram */
+      background: white; /* Fundo branco */
+      color:black; /* Ícone preto */
+      transform: scale(1.4); /* Cresce 40% */
+      animation-play-state: paused; /* Pausa animação */
+    }
+
+    .instagram-float svg { /* SVG Instagram */
+      width: 28px; /* Largura */
+      height: 28px; /* Altura */
+      fill: currentColor; /* Cor do pai */
+    }
+  </style> <!-- Fecha CSS -->
+</head> <!-- Fecha head -->
+
+<body> <!-- Começo do visível -->
+  <section class="hero"> <!-- Seção principal -->
+    <div class="texto"> <!-- Bloco texto -->
+      <h1>Criamos Landing Pages para o seu negócio!</h1> <!-- Título -->
+      <p>Página rápida, bonita e no seu estilo com a magia da Blum!</p> <!-- Subtítulo -->
+      <button onclick="window.open('https://wa.me/5584921709566?text=Olá! Quero minha landing page!', '_blank')"> <!-- Botão abre WhatsApp em nova aba -->
+        Quero fazer a minha!✨
+      </button> <!-- Fecha botão -->
+    </div> <!-- Fecha texto -->
+
+    <div class="galeria-vertical"> <!-- Bloco mascote -->
+      <img src="blum_transparent.png" class="blum-mascote" alt="Blum mascote"> <!-- Imagem da Blum -->
+    </div> <!-- Fecha galeria -->
+    
+    <div class="Pages-Flutuantes"> <!-- Bloco das 3 demos -->
+      <div class="page1"> <!-- Caixa 1 -->
+        <img src="blum_confeitos.jpg" alt="Blum-confeitos"> <!-- Imagem confeitaria -->
+      </div> <!-- Fecha page1 -->
+      <div class="page2"> <!-- Caixa 2 -->
+        <img src="blum_cabelos.jpg" alt="Blum-cabelos"> <!-- Imagem salão -->
+      </div> <!-- Fecha page2 -->
+      <div class="page3"> <!-- Caixa 3 -->
+        <img src="blum_médica.jpg" alt="Blum-médica"> <!-- Imagem clínica -->
+      </div> <!-- Fecha page3 -->
+  </div> <!-- Fecha Pages-Flutuantes -->
+</section> <!-- Fecha hero -->
+
+<a href="http://github.com/seuuser" target="_blank" class="github-float" aria-label="Github"> <!-- Link GitHub fixo -->
+        <svg viewBox="0 0 24 24"> <!-- Ícone SVG GitHub -->
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+      </a>
+
+<a href="http://instagram.com/seuuser" target="_blank" class="instagram-float" aria-label="Instagram"> <!-- Link Instagram fixo -->
+  <svg viewBox="0 0 24 24"> <!-- Ícone SVG Instagram -->
+    <path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/>
+  </svg>
+</a>
+
+</body> <!-- Fecha body -->
+</html> <!-- Fecha html -->
